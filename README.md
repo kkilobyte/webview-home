@@ -1,5 +1,9 @@
 # webview-home
-A home page that is designed with ChromeOS webviews in mind.
+A home page that is designed with ChromeOS webviews in mind.\
+<img src="assets/preview.png">
+
+## URL
+https://kkilouwu.bio/home/
 
 # Perks
 ## URL + Search bar
@@ -14,3 +18,6 @@ A simple battery percentage and time left counter to quickly determine how much 
 - create a logo
 - add a setting page to change search engine
 - fix battery info not showing in some webviews (such as the lego webview (chrome app version))
+
+# Explaination
+ChromeOS webviews are often used to bypass internet censorship. Schools sometimes blocks websites that can be cruical to learning or to push their agenda, (example: schools blocking Wikipedia pages on guns), but webviews 90% of the time are limited to one tab with no URL bar. I created this to show time, date, and battery level along with a URL+Search bar for ease of access for people who have to use webviews.
