@@ -100,3 +100,25 @@ body.black-text {
 body.black-text svg {
   filter: brightness(0);
 }
+
+.url-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #1e1e2e;
+}
+
+#url-input {
+    flex: 1;
+    padding: 5px;
+    background-color: #181825;
+    border: #11111b;
+}
+
+#search-button {
+    padding: 5px 10px;
+    background-color: #cba6f7;
+    color: #11111b;
+    border: none;
+    cursor: pointer;
+}

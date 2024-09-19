@@ -9,6 +9,10 @@ const HELP_URL = "https://github.com/kkilobyte/skiovox-newtab";
 const WEBSTORE_URL = "https://chromewebstore.google.com";
 const ADDSESSION_URL = "https://accounts.google.com/signin/v2/identifier?hl=en&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession";
 
+const urlInput = document.getElementById('url-input');
+const searchButton = document.getElementById('search-button');
+const resultContainer = document.getElementById('result-container');
+
 let [
     help,
     webStore,
@@ -28,8 +32,6 @@ let version = document.querySelector('.version')
 let date = document.querySelector('.date')
 let time = document.querySelector('.time')
 let battery = document.querySelector('.battery')
-
-version.textContent = "v" + chrome.runtime.getManifest().version
 
 wifi.addEventListener('click', () => {
     chrome.tabs.create({ url: WIFI_URL })
@@ -78,8 +80,47 @@ reset.addEventListener('click', () => {
     }
 })
 
-new FullscreenController(fullscreen);
+searchButton.addEventListener('click',   
+ () => {
+    const userInput = urlInput.value.trim();
+
+    const urlRegex = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
+
+    if (urlRegex.test(userInput)) {
+        window.location.href = userInput;
+        	urlInput.addEventListener('keypress', (event) => {
+        	    if (event.key === 'Enter') {
+        	        window.location.href = userInput.value;
+        	    }
+        	});
+    } else {
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
+        window.location.href = searchUrl;
+        	urlInput.addEventListener('keypress', (event) => {
+        	    if (event.key === 'Enter') {
+        	        window.location.href = searchUrl.value;
+        	    }
+        	});
+    }
+});
+
+urlInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        const userInput = urlInput.value.trim();
+
+    const urlRegex = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
+
+        if (urlRegex.test(userInput)) {
+            window.location.href = userInput;
+        } else {
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
+            window.location.href = searchUrl;
+        }
+    }
+});
+
+// new FullscreenController(fullscreen);
 new BatteryDisplay(battery);
 new DateDisplay(date);
 new TimeDisplay(time);
-new BackgroundController(colorChange);
+// new BackgroundController(colorChange);
