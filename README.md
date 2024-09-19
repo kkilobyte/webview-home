@@ -10,6 +10,7 @@ A simple to read time and date so you don't have to leave the webview to look fo
 A simple battery percentage and time left counter to quickly determine how much battery is left.
 
 # To do
-~~- actually work on the URL bar~~
+- ~~actually work on the URL bar~~
 - create a logo
 - add a setting page to change search engine
+- fix battery info not showing in some webviews (such as the lego webview (chrome app version))
