@@ -80,43 +80,44 @@ reset.addEventListener('click', () => {
     }
 })
 
-searchButton.addEventListener('click',   
- () => {
-    const userInput = urlInput.value.trim();
+searchButton.addEventListener('click', () => {
+  const userInput = urlInput.value.trim();
 
-    const urlRegex = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
+  if (!/^(?:http|https):\/\//i.test(userInput)) {
+    const formattedUrl = `https://${userInput}`;
+    window.location.href = formattedUrl;
+    return;
+  }
 
-    if (urlRegex.test(userInput)) {
-        window.location.href = userInput;
-        	urlInput.addEventListener('keypress', (event) => {
-        	    if (event.key === 'Enter') {
-        	        window.location.href = userInput.value;
-        	    }
-        	});
-    } else {
-        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
-        window.location.href = searchUrl;
-        	urlInput.addEventListener('keypress', (event) => {
-        	    if (event.key === 'Enter') {
-        	        window.location.href = searchUrl.value;
-        	    }
-        	});
-    }
+  const urlRegex = /^(?:(?:https?):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
+
+  if (urlRegex.test(userInput)) {
+    window.location.href = userInput;
+  } else {
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
+    window.location.href = searchUrl;
+  }
 });
 
 urlInput.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        const userInput = urlInput.value.trim();
+  if (event.key === 'Enter') {
+    const userInput = urlInput.value.trim();
 
-    const urlRegex = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
-
-        if (urlRegex.test(userInput)) {
-            window.location.href = userInput;
-        } else {
-            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
-            window.location.href = searchUrl;
-        }
+    if (!/^(?:http|https):\/\//i.test(userInput)) {
+      const formattedUrl = `https://${userInput}`;
+      window.location.href = formattedUrl;
+      return;
     }
+
+    const urlRegex = /^(?:(?:https?):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
+
+    if (urlRegex.test(userInput)) {
+      window.location.href = userInput;
+    } else {
+      const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
+      window.location.href = searchUrl;
+    }
+  }
 });
 
 // new FullscreenController(fullscreen);
