@@ -23,4 +23,4 @@ A simple battery percentage and time left counter to quickly determine how much 
 ChromeOS webviews are often used to bypass internet censorship. Schools sometimes blocks websites that can be cruical to learning or to push their agenda, (example: schools blocking Wikipedia pages on guns), but webviews 90% of the time are limited to one tab with no URL bar. I created this to show time, date, and battery level along with a URL+Search bar for ease of access for people who have to use webviews.
 
 # Credits
-[Bypassi](@bypassiwastaken) - original Skiovox Helper extension and Skiovox exploit
+[Bypassi](https://bypassi.com) - original [Skiovox Helper extension](https://github.com/bypassiwastaken/skiovox-helper) and [Skiovox exploit](https://skiovox.com/skiovox.pdf)
