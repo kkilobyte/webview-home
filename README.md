@@ -2,8 +2,9 @@
 A home page that is designed with ChromeOS webviews in mind.\
 <img src="assets/preview.png">
 
-## URL
+## URLs
 https://kkilouwu.bio/home/
+https://webview-home.vercel.app/
 
 # Perks
 ## URL + Search bar
