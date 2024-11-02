@@ -3,7 +3,7 @@ A home page that is designed with ChromeOS webviews in mind.\
 <img src="assets/preview.png">
 
 ## URLs
-https://kkilouwu.bio/home/
+https://kkilouwu.bio/home/ \
 https://webview-home.vercel.app/
 
 # Perks
