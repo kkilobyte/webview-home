@@ -83,16 +83,11 @@ reset.addEventListener('click', () => {
 searchButton.addEventListener('click', () => {
   const userInput = urlInput.value.trim();
 
-  if (!/^(?:http|https):\/\//i.test(userInput)) {
-    const formattedUrl = `https://${userInput}`;
-    window.location.href = formattedUrl;
-    return;
-  }
-
   const urlRegex = /^(?:(?:https?):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
 
   if (urlRegex.test(userInput)) {
-    window.location.href = userInput;
+    const formattedUrl = /^(?:http|https):\/\//i.test(userInput) ? userInput : `https://${userInput}`;
+    window.location.href = formattedUrl;
   } else {
     const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
     window.location.href = searchUrl;
@@ -103,16 +98,11 @@ urlInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     const userInput = urlInput.value.trim();
 
-    if (!/^(?:http|https):\/\//i.test(userInput)) {
-      const formattedUrl = `https://${userInput}`;
-      window.location.href = formattedUrl;
-      return;
-    }
-
     const urlRegex = /^(?:(?:https?):\/\/)?(?:(?!(?:www\.|m\.)).+\.)?((?:[a-z0-9\-]+\.)+[a-z]{2,}|localhost)(?:\/[^#?\s]+)?$/i;
 
     if (urlRegex.test(userInput)) {
-      window.location.href = userInput;
+      const formattedUrl = /^(?:http|https):\/\//i.test(userInput) ? userInput : `https://${userInput}`;
+      window.location.href = formattedUrl;
     } else {
       const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userInput)}`;
       window.location.href = searchUrl;
