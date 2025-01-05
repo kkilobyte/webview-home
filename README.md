@@ -6,6 +6,7 @@ A home page that is designed with ChromeOS webviews in mind.\
 https://kkilo.me/home/ \
 https://webview-home.vercel.app/
 
+
 ## Pastes
 `console.log("https://kkilo.me/home")` \
 `<img src=# onerror='window.location.href="https://kkilo.me/home"')`
@@ -29,3 +30,11 @@ ChromeOS webviews are often used to bypass internet censorship. Schools sometime
 
 # Credits
 [Bypassi](https://bypassi.com) - original [Skiovox Helper extension](https://github.com/bypassiwastaken/skiovox-helper) and [Skiovox exploit](https://skiovox.com/skiovox.pdf)
+
+# Google
+Some webviews can't use this because it's too old browser version. Use the below links.
+
+https://www.google.com/ \
+https://www.google.co.jp \
+https://www.google.co.hk \
+https://www.google.co.uk
