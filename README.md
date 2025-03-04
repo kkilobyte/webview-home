@@ -3,13 +3,12 @@ A home page that is designed with ChromeOS webviews in mind.\
 <img src="assets/preview.png">
 
 ## URLs
-https://kkilo.me/home/ \
-https://webview-home.vercel.app/
-
+https://webview-home.vercel.app/ \
+https://catppuccin-home.neocities.org
 
 ## Pastes
-`console.log("https://kkilo.me/home")` \
-`<img src=# onerror='window.location.href="https://kkilo.me/home"')`
+`console.log("https://catppuccin-home.neocities.org")` \
+`<img src=# onerror='window.location.href="https://catppuccin-home.neocities.org"')`
 
 # Perks
 ## URL + Search bar
